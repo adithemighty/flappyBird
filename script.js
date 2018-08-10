@@ -5,7 +5,7 @@ window.onload = function() {
   };
   let canvas = document.getElementById("canvas");
   let ctx = canvas.getContext("2d");
-  let bird = new Bird(300, 200, 1, 25, 1, -.002, ctx);
+  let bird = new Bird(300, 200, 1, 25, 1, -0.003, ctx);
 
   function startGame() {
     updateCanvas();
@@ -23,7 +23,6 @@ window.onload = function() {
 
   document.onkeydown = function(e) {
     if (e.keyCode === 32) {
-      console.log("yay i space");
       bird.moveUp();
       bird.draw();
     }

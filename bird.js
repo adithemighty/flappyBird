@@ -30,6 +30,6 @@ function Bird(width, height, speedX, speedY, gravSpeed, gravity, ctx) {
   birdImg.src = this.src;
 
   this.draw = function() {
-    ctx.drawImage(birdImg, this.width, this.height, 70 * 1.4, 70 * 1);
+    ctx.drawImage(birdImg, this.width, this.height, 100 * 1, 100 * 1);
   };
 }
