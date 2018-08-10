@@ -1,7 +1,8 @@
 console.log("hallo");
 const canvas = document.getElementById("canvas");
 
-function Bird(width, height, speedX, speedY, gravSpeed, gravity) {
+function Bird(width, height, speedX, speedY, gravSpeed, gravity, ctx) {
+  console.log(ctx);
   this.width = width;
   this.height = height;
   this.speedX = speedX;
@@ -11,8 +12,7 @@ function Bird(width, height, speedX, speedY, gravSpeed, gravity) {
   this.src = "./images/flappy.png";
 
   this.moveUp = function() {
-    this.speedY *= -1;
-    this.height *= this.speedY;
+    this.height -= 50;
   };
 
   this.newPos = function() {
@@ -24,5 +24,12 @@ function Bird(width, height, speedX, speedY, gravSpeed, gravity) {
     //clear image
     //draw bird
     //restore image
+  };
+
+  let birdImg = new Image();
+  birdImg.src = this.src;
+
+  this.draw = function() {
+    ctx.drawImage(birdImg, this.width, this.height, 70 * 1.4, 70 * 1);
   };
 }
