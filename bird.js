@@ -9,7 +9,7 @@ function Bird(width, height, speedX, speedY, gravSpeed, gravity, ctx) {
   this.speedY = speedY;
   this.gravSpeed = gravSpeed;
   this.gravity = gravity;
-  this.src = "./images/flappy.png";
+  this.src = "./images/bear.png";
 
   this.moveUp = function() {
     this.height -= this.speedY;
