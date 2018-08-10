@@ -5,7 +5,7 @@ window.onload = function() {
   };
   let canvas = document.getElementById("canvas");
   let ctx = canvas.getContext("2d");
-  let bird = new Bird(300, 400, 1, 1, 1, 1, ctx);
+  let bird = new Bird(300, 200, 1, 25, 1, -.002, ctx);
 
   function startGame() {
     updateCanvas();
@@ -15,9 +15,10 @@ window.onload = function() {
     backgroundImage.move();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     backgroundImage.draw();
+    bird.newPos();
     bird.draw();
 
-    setInterval(updateCanvas, 100 / 50);
+    setInterval(updateCanvas, 1000 / 50);
   }
 
   document.onkeydown = function(e) {
@@ -27,11 +28,6 @@ window.onload = function() {
       bird.draw();
     }
   };
-
-  //bird stuff
-  //information bird
-
-  //canvas bird
 
   //background image
   var imgBackground = new Image();

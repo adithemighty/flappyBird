@@ -12,12 +12,12 @@ function Bird(width, height, speedX, speedY, gravSpeed, gravity, ctx) {
   this.src = "./images/flappy.png";
 
   this.moveUp = function() {
-    this.height -= 50;
+    this.height -= this.speedY;
   };
 
   this.newPos = function() {
     //calc new position
-    //this.speedX
+    this.height -= this.gravity;
   };
 
   this.update = function() {
